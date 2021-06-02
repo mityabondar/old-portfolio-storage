@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/vendor.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/vendor.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=3ab557b4-f2b1-4489-ab53-3b4db1847441&amp;lang=ru_RU" type="text/javascript"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="global-wrapper">
+      <header class="header">
+        <div class="header__wrap container flex flex--between flex--center">
+          <div class="header__logo h-logo"><a class="h-logo__link" href="#"><img class="h-logo__image" src="images/logo.png" alt=""></a></div><a class="mobile" id="hamburger" href="#"><span></span></a>
+          <nav class="header__nav nav mobile-hidden">
+            <ul class="nav__list flex flex--between flex--center">
+              <li class="nav__item nav__item--active"><a class="nav__link scroll-anchor" href="#banner">Главная</a></li>
+              <li class="nav__item"><a class="nav__link scroll-anchor" href="#place">Расположение</a></li>
+              <li class="nav__item"><a class="nav__link scroll-anchor" href="#advantages">Преимущества</a></li>
+              <li class="nav__item"><a class="nav__link scroll-anchor" href="#feature">Характеристики</a></li>
+              <li class="nav__item"><a class="nav__link scroll-anchor" href="#commerce">Предложение</a></li>
+              <li class="nav__item"><a class="nav__link scroll-anchor" href="#photo">Фото</a></li>
+              <li class="nav__item"><a class="nav__link scroll-anchor" href="#footer">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="header__contacts contacts flex flex--between flex--center mobile-hidden">
+            <div class="contacts__btn"><a class="btn btn--green" data-fancybox data-src="#popup" href="javascript:;">Задать вопрос</a></div>
+            <div class="contacts__info"><a class="contacts__phone" href="tel:+74992830113">+7 (499) 283-01-13</a>
+              <div class="contacts__place">р.Татарстан д.Макаровка (М7)</div>
+            </div>
+          </div>
+          <div class="mobile-menu">
+            <div class="mobile-menu__wrap">
+              <nav class="mobile-menu__nav">
+                <ul>
+                  <li><a class="scroll-anchor" href="#banner">Главная</a></li>
+                  <li><a class="scroll-anchor" href="#place">Расположение</a></li>
+                  <li><a class="scroll-anchor" href="#advantages">Преимущества</a></li>
+                  <li><a class="scroll-anchor" href="#feature">Характеристики</a></li>
+                  <li><a class="scroll-anchor" href="#commerce">Предложение</a></li>
+                  <li><a class="scroll-anchor" href="#photo">Фото</a></li>
+                  <li><a class="scroll-anchor" href="#footer">Контакты</a></li>
+                </ul>
+              </nav>
+              <div class="mobile-menu__contacts"><a class="btn btn--green" data-fancybox data-src="#popup" href="javascript:;">Задать вопрос</a>
+                <div class="mobile-menu__info"><a class="mobile-menu__phone" href="tel:+74992830113">+7 (499) 283-01-13</a>
+                  <div class="mobile-menu__place">р.Татарстан д.Макаровка (М7)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <section class="banner bg" id="banner" style="background-image: url(images/bg.png);">
+          <div class="banner__inner container flex flex--center">
+            <div class="banner__content">
+              <h1 class="banner__h1">Крупнейший логистический<br> парк класса "А"</h1>
+              <div class="banner__text">в Республике Татарстан</div>
+              <div class="banner__btn"><a class="btn btn--green" data-fancybox data-src="#popup" href="javascript:;">Задать вопрос</a></div>
+            </div>
+          </div>
+          <div class="banner__down"><a class="banner__down-link scroll-anchor-down" href="#place"><img src="images/svg/down.svg" alt=""></a></div>
+        </section>
+        <div class="wrapper-with-line">
+          <section class="place" id="place">
+            <div class="place__inner container">
+              <div class="place__row flex">
+                <div class="col-50 place__col place__info">
+                  <div class="title">
+                    <div class="title__wrapper flex flex--center">
+                      <div class="title__number"><span>01</span></div>
+                      <div class="title__name">Расположение</div>
+                    </div>
+                  </div>
+                  <div class="padding-l">
+                    <div class="place__adress">г. Казань, Высокогорский район,<br> д. Макаровка, ул. Березовая, 9-11 </div>
+                    <div class="place__km">6 км от Казани на<br> федеральной трассе М7</div>
+                    <div class="place__text">Логопарк "Биек Тау", общей запланированной площадью 260 000 м2, удачно расположен в 6 км от Казани на федеральной трассе М7, по которой идет поток грузов в Поволжье, Урал и Сибирь.</div>
+                  </div>
+                </div>
+                <div class="col-50 place__col map">
+                  <div class="place__map">
+                    <div class="map__block" id="map"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="advantages" id="advantages">
+            <div class="advantages__inner container">
+              <div class="title">
+                <div class="title__wrapper flex flex--center">
+                  <div class="title__number"><span>02</span></div>
+                  <div class="title__name">Преимущества</div>
+                </div>
+              </div>
+              <div class="padding-l">
+                <div class="advantages__text">Высокие потолки и минимальное количество колонн позволяют максимально эффективно использовать полезную площадь склада, используя шестиярусное стеллажное хранение.</div>
+                <div class="advantages__adv advantage">
+                  <div class="advantage__inner flex flex--wrap">
+                    <div class="advantage__item col-3 flex flex--center">
+                      <div class="advantage__picture"><img src="images/svg/01.svg" alt=""></div>
+                      <div class="advantage__info">6 км от Казани на<br> федеральной трассе м7</div>
+                    </div>
+                    <div class="advantage__item col-3 flex flex--center">
+                      <div class="advantage__picture"><img src="images/svg/02.svg" alt=""></div>
+                      <div class="advantage__info">Таможенный пост и СВХ</div>
+                    </div>
+                    <div class="advantage__item col-3 flex flex--center">
+                      <div class="advantage__picture"><img src="images/svg/03.svg" alt=""></div>
+                      <div class="advantage__info">Аренда от 2 800 м2</div>
+                    </div>
+                    <div class="advantage__item col-3 flex flex--center">
+                      <div class="advantage__picture"><img src="images/svg/04.svg" alt=""></div>
+                      <div class="advantage__info">Мощность для<br> производства до 9 МВт</div>
+                    </div>
+                    <div class="advantage__item col-3 flex flex--center">
+                      <div class="advantage__picture"><img src="images/svg/05.svg" alt=""></div>
+                      <div class="advantage__info">Класс "А"</div>
+                    </div>
+                    <div class="advantage__item col-3 flex flex--center">
+                      <div class="advantage__picture"><img src="images/svg/06.svg" alt=""></div>
+                      <div class="advantage__info">1 Док на 950 м2,<br> оборудованный докшелтером<br> и доклевеллером</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="feature" id="feature">
+            <div class="feature__inner container">
+              <div class="title">
+                <div class="title__wrapper flex flex--center">
+                  <div class="title__number"><span>03</span></div>
+                  <div class="title__name">Характеристики</div>
+                </div>
+              </div>
+              <div class="feature__content flex">
+                <div class="col-50 feature__col feature__image"><img src="images/character.png" alt=""></div>
+                <div class="col-50 feature__col feature__text">
+                  <ul class="feature__list">
+                    <li class="feature__item">Рабочая высота потолков — 12 м  </li>
+                    <li class="feature__item">Шаг колонн — 12х24 м  </li>
+                    <li class="feature__item">Нагрузки на пол от 6 тонн/кв.м  </li>
+                    <li class="feature__item">Глубина здания - 117 м  </li>
+                    <li class="feature__item">Уровень пола — 1,2 м  </li>
+                    <li class="feature__item">Пожарная сигнализация, спринклерная система<br> пожаротушения  </li>
+                    <li class="feature__item">Температурный режим  </li>
+                    <li class="feature__item">Огороженная охраняемая территория вокруг склада</li>
+                    <li class="feature__item">Складские, административные и офисные помещения,<br> расположенные на мезонинных этажах</li>
+                    <li class="feature__item">Круглосуточный график работы</li>
+                    <li class="feature__item">Оптико-волоконные коммуникации</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="commerce" id="commerce">
+            <div class="commerce__inner container">
+              <div class="title">
+                <div class="title__wrapper flex flex--center">
+                  <div class="title__number"><span>04</span></div>
+                  <div class="title__name">Коммерческие условия</div>
+                </div>
+              </div>
+              <div class="flex commerce__row">
+                <div class="col-50 commerce__col">
+                  <div class="commerce__card card">
+                    <div class="card__wrapper">
+                      <div class="card__line">
+                        <p>В аренду предлагаются площади от:</p><strong>2 800 м2</strong>
+                      </div>
+                      <!--
+                      <div class="card__line">
+                        <p>Цена аренды от:</p><strong>230 р/м2</strong>
+                      </div>
+                      -->
+                      <div class="card__line--phone">
+                        <p>Для уточнения коммерческих условий<br> пожалуйста свяжитесь с нами:</p><a href="tel:+74992830113">+7 (499) 283-01-13</a>
+                      </div>
+                      <div class="card__line--button"><a class="btn btn--green btn--big" data-fancybox data-src="#popup" href="javascript:;">Оставить заявку</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-50 commerce__col">
+                  <div class="commerce__clients clients">
+                    <div class="clients__title">Арендаторами склада<br> уже стали</div>
+                    <div class="clients__grid flex flex--wrap">
+                      <div class="col-50 clients__item"><img src="images/firm1.png" alt=""></div>
+                      <div class="col-50 clients__item"><img src="images/firm2.png" alt=""></div>
+                      <div class="col-50 clients__item"><img src="images/firm3.png" alt=""></div>
+                      <div class="col-50 clients__item"><img src="images/firm4.png" alt=""></div>
+                      <div class="col-50 clients__item"><img src="images/firm5.png" alt=""></div>
+                      <div class="col-50 clients__item"><img src="images/firm6.png" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="photo" id="photo">
+            <div class="photo__inner container">
+              <div class="title">
+                <div class="title__wrapper flex flex--center">
+                  <div class="title__number"><span>05</span></div>
+                  <div class="title__name">Фотогалерея</div>
+                </div>
+              </div>
+              <div class="p-slider">
+                <div class="photo__p-slider swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider1.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider2.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider3.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider4.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider1.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider2.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider3.png);"></div>
+                    </div>
+                    <div class="swiper-slide p-slider__item">
+                      <div class="p-slider__inner bg" style="background-image: url(images/slider4.png);"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-next p-slider__btn p-slider__next"><img src="images/svg/arrow.svg" alt=""></div>
+                <div class="swiper-button-prev p-slider__btn p-slider__prev"><img src="images/svg/arrow.svg" alt=""></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer class="footer" id="footer">
+        <div class="footer__wrapper container">
+          <div class="title">
+            <div class="title__wrapper flex flex--center">
+              <div class="title__number"><span>06</span></div>
+              <div class="title__name">Остались вопросы?<br> Напишите нам!</div>
+            </div>
+          </div>
+          <div class="footer__top f-top">
+            <div class="padding-l">
+              <div class="flex footer__row">
+                <div class="f-top__col col-50">
+                  <div class="f-top__form">
+                    <form class="form" id="feedback-footer">
+                      <div class="form__row flex">
+                        <div class="form__col form__col--padding col-50">
+                          <div class="form__input f-input">
+                            <input class="f-input__item" type="text" name="name" placeholder="Ваше имя"><span><img src="images/svg/man-user.svg" alt=""></span>
+                          </div>
+                        </div>
+                        <div class="form__col col-50">
+                          <div class="form__input f-input">
+                            <input class="f-input__item form-phone" type="text" name="phone" placeholder="Телефон"><span><img src="images/svg/phone-user.svg" alt=""></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form__input f-input">
+                        <textarea class="f-input__item" name="message"></textarea>
+                      </div>
+                      <div class="form__checkbox checkbox">
+                        <input class="checkbox__input" id="checkbox" type="checkbox" name="checkbox" value="checked">
+                        <label class="checkbox__label" for="checkbox">Согласие на <a href="policy.docx" targer="_blank">обработку личных данных</a></label>
+                      </div>
+                      <div class="form__submit">
+                        <button class="btn btn--green btn--big" type="submit">Оставить заявку</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="f-top__col col-50 f-top__col--left">
+                  <div class="f-top__contacts f-contacts">
+                    <div class="f-contacts__adress">р. Татарстан, д. Макаровка,<br> ул. Березовая д. 9-1</div>
+                    <div class="f-contacts__contacts"><a class="f-contacts__phone" href="tel:+74992830113">+7 (499) 283-01-13</a><a class="f-contacts__email" href="mailto:biek@biek-tau.com">biek@biek-tau.com</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom f-bottom flex padding-l">
+            <div class="col-50 f-bottom__copy"><a class="f-bottom__copy-link" href="policy.docx" targer="_blank">Политика конфиденциальности</a>
+              <div class="f-bottom__copy-text">© Логопарк Биек Тау, 2019</div>
+            </div>
+            <div class="col-50 f-bottom__logo">
+              <div class="logotype">
+                <a class="logotype__link" href="/"></a>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55px" height="55px" viewBox="0 0 55 55" version="1.1">
+                  <g id="---" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Mortage/menu_tabs/none" transform="translate(-116.000000, -1.000000)" fill="#072833">
+                    <g id="Group-49">
+                    <g id="Group-3" transform="translate(115.918112, 0.000000)">
+                      <g id="Group" transform="translate(0.000000, 1.037037)">
+                      <g id="Group-2">
+                        <path id="Fill-1" d="M19.6044692,25.8583829 L25.7075204,25.8583829 L25.7075204,3.40009345 L19.6044692,3.40009345 L19.6044692,25.8583829 Z M16.2701605,29.0597641 L29.0397189,29.0597641 L29.0397189,0.202517379 L16.2701605,0.202517379 L16.2701605,29.0597641 Z"></path>                          
+                        <polygon id="Fill-2" points="0.234245741 35.3906519 54.5121494 35.3906519 54.5121494 32.2023772 0.234245741 32.2023772"></polygon>                          
+                        <path id="Fill-3" d="M3.55631462,47.8490644 L19.2452924,47.8490644 L19.2452924,41.7625504 L3.55631462,41.7625504 L3.55631462,47.8490644 Z M0.234245741,54.6458689 L3.55631462,54.6458689 L3.55631462,51.0335339 L22.5682054,51.0335339 L22.5682054,38.5751214 L0.234245741,38.5751214 L0.234245741,54.6458689 L0.234245741,54.6458689 Z"></path>                          
+                        <polygon id="Fill-4" points="41.7430131 3.40009345 41.7430131 29.0593413 45.0752115 29.0593413 45.0752115 9.80116467 51.1769966 3.4026302 51.1769966 29.0593413 54.5125715 29.0593413 54.5125715 0.202517379 49.8289229 0.202517379 45.0752115 5.1728604 45.0752115 0.202517379 40.3936732 0.202517379 32.3039649 8.59028832 32.3039649 29.0593413 35.640384 29.0593413 35.640384 9.80243305"></polygon>                          
+                        <path id="Fill-5" d="M29.1414364,47.8490644 L38.3981528,47.8490644 L38.3981528,41.7625504 L29.1414364,41.7625504 L29.1414364,47.8490644 Z M41.8641456,47.8490644 L51.1913467,47.8490644 L51.1913467,41.7625504 L41.8641456,41.7625504 L41.8641456,47.8490644 Z M25.8176792,51.0335339 L38.3985748,51.0335339 L38.3985748,54.6458689 L41.8641456,54.6458689 L41.8641456,51.0335339 L54.5129936,51.0335339 L54.5129936,38.5751214 L25.8176792,38.5751214 L25.8176792,51.0335339 L25.8176792,51.0335339 Z"></path>                          
+                        <path id="Fill-6" d="M3.57024275,9.80243305 L9.67076156,3.4026302 L9.67076156,25.8588057 L3.57024275,25.8588057 L3.57024275,9.80243305 Z M9.67076156,29.0593413 L13.0054924,29.0593413 L13.0054924,0.202517379 L8.323532,0.202517379 L0.234667805,8.59028832 L0.234667805,29.0593413 L9.67076156,29.0593413 L9.67076156,29.0593413 Z"></path>
+                      </g>
+                      </g>
+                    </g>
+                    </g>
+                  </g>
+                  </g>
+                </svg>
+                <span class="logotype__name">Управление<br>проектами</span></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="popup" id="popup" style="display: none;">
+        <div class="popup__wrapper">
+          <div class="popup__form">
+            <div class="popup__title">Заявка</div>
+            <form class="form" id="feedback-popup">
+              <div class="form__row">
+                <div class="form__col">
+                  <div class="form__input f-input">
+                    <input class="f-input__item" type="text" name="name" placeholder="Ваше имя"><span><img src="images/svg/man-user.svg" alt=""></span>
+                  </div>
+                </div>
+                <div class="form__col">
+                  <div class="form__input f-input">
+                    <input class="f-input__item form-phone" type="text" name="phone" placeholder="Телефон"><span><img src="images/svg/phone-user.svg" alt=""></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form__input f-input">
+                <textarea class="f-input__item" name="message"></textarea>
+              </div>
+              <div class="form__checkbox checkbox">
+                <input class="checkbox__input" id="checkbox2" type="checkbox" name="checkbox" value="checked">
+                <label class="checkbox__label" for="checkbox2">Согласие на <a href="policy.docx" targer="_blank">обработку личных данных</a></label>
+              </div>
+              <div class="form__submit">
+                <button class="btn btn--green btn--big" type="submit">Оставить заявку</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
